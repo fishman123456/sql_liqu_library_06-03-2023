@@ -37,8 +37,27 @@ using (SqlConnection connection = new SqlConnection(connectionString))
             Console.WriteLine($"Имя: {one.Title}  цена: {one.Price}  страниц: {one.Pages}");
         }
     }
+    // передаём обьект в sql
+
   //  Console.WriteLine($"Имя: {one.Title}  цена: {one.Price}  страниц: {one.Pages}");
     reader.Close();
 }
 
-Console.Read();
+//static async Task obval (string[] args)
+//{
+    string connectionString3 = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Library;Integrated Security=True";
+
+    // добавляем два объекта
+    string sqlExpression3 = "INSERT INTO Books (Title, PRICE, PAGES) VALUES ('Alice', 32, 5200), ('Bob', 28, 3258)";
+
+    using (SqlConnection connection = new SqlConnection(connectionString))
+    {
+        await connection.OpenAsync();
+
+        SqlCommand command = new SqlCommand(sqlExpression, connection);
+        int number = await command.ExecuteNonQueryAsync();
+        Console.WriteLine($"Добавлено объектов: {number}");
+    }
+    Console.Read();
+
+//}
