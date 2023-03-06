@@ -3,7 +3,7 @@ using Azure;
 using Microsoft.Data.SqlClient;
 using sql_liqu_library_06_03_2023;
 using System.Data;
-
+ // нужно созать список обьектов и добавить туда поля в обьекты!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // строка соединения
 string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Library;Integrated Security=True";
 // запрос для sql
