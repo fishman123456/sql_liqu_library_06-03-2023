@@ -1,0 +1,1 @@
+﻿alter database scoped configuration set identity_cache=off 
